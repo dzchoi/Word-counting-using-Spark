@@ -64,7 +64,7 @@ words = ( lines
 #words.saveAsTextFile("output") # output the whole dataset into a directory
 
 print "%d words in total." % words.count()
-print "The top 20 of most frequent words are:"
+print "The top 20 most frequent words are:"
 print words.take(20)
 ```
 
@@ -78,6 +78,6 @@ chmod +x ./my_script.py
 And it will say:
 ```
 6728 words in total.
-The top 20 of most frequent words are:
+The top 20 most frequent words are:
 [(u'the', 2559), (u'I', 1662), (u'to', 1389), (u'of', 1344), (u'a', 1185), (u'and', 1050), (u'was', 919), (u'that', 887), (u'it', 841), (u'in', 811), (u'you', 783), (u'is', 548), (u'he', 514), (u'not', 512), (u'had', 489), (u'her', 449), (u'his', 392), (u'at', 385), (u'Poirot', 382), (u'me', 382)]
 ```
