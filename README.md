@@ -1,6 +1,6 @@
 # Word-counting using Spark
 
-A simple running-through on Ubuntu to count words in the book "The Mysterious Affair at Styles" by Agatha Christie
+A simple running-through on Ubuntu to count words in the novel "The Mysterious Affair at Styles" by Agatha Christie
 
 ###1. Install JRE, Scala, and Spark
 Run the following commands directly on bash prompt (or by saving into a shell script and running it)
@@ -30,12 +30,12 @@ export PATH=$PATH:/usr/local/scala/bin:/usr/local/spark/bin' ~/.bashrc
 ```
 
 ###2. Prepare the novel
-Run this command or download it from a web browser
+Run this command or download the novel with a web browser,
 ```
 wget http://www.gutenberg.org/files/863/863-0.txt
 ```
 
-###3. Prepare the Python script as `my_script.py`
+###3. Prepare the Python script `my_script.py` of the content:
 ```python
 #!/usr/local/spark/bin/spark-submit
 
@@ -68,12 +68,14 @@ print "The top 20 of most frequent words are:"
 print words.take(20)
 ```
 
-###3. Run it
+###3. Run it!
+Run:
 ```
 chmod +x ./my_script.py
 ./my_script.py
 ```
 
+And it will say:
 ```
 6728 words in total.
 The top 20 of most frequent words are:
