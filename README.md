@@ -48,15 +48,15 @@ import string   # for string.punctuation
 conf = SparkConf().setMaster("local").setAppName("test")
     # By "local", Spark runs on one thread on the local machine
 
-sc = SparkContext(conf = conf)  # initialize a SparkContext
+sc = SparkContext(conf = conf)    # initialize a SparkContext
 
-lines = sc.textFile("863-0.txt")
+lines = sc.textFile("863-0.txt")  # create an RDD
 words = ( lines
     .flatMap(lambda line: line.split())     
     .map(lambda word: word.strip(string.punctuation))   # strip punctuation characters
     .filter(lambda word: word != '')        # filter out null words
     #.map(lambda word: word.lower())        # to lower case
-    .map(lambda word: (word, 1))   
+    .map(lambda word: (word, 1))
     .reduceByKey(lambda a, b: a+b)
     .sortBy(lambda (word, count): -count)   # descending sort by count
 )
